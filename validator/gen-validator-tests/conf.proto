@@ -10,8 +10,9 @@ message Conf {
     optional string N = 1; // name
     optional date Due = 2; // submission deadline
     optional date Notify = 3; // notification
-    optional location L = 4; // location
-    repeated string T = 5; // tags
+    optional location Loc = 4; // location
+    optional string Category = 5;
+    repeated string Tags = 6; // tags
 }
 
 message date {

@@ -71,7 +71,7 @@ var ConfIsIn2026OrLate2025AndEU = G{"main": InAnyOrder(
 			),
 		),
 	),
-	In("L",
+	In("Loc",
 		InPath("Cont", Value(Eq(StringVar(), StringConst("EU")))),
 	),
 	Any(),
@@ -83,7 +83,7 @@ var ConfITPEU = &Conf{
 		Y: proto.String("2025"),
 		M: proto.String("11"),
 	},
-	L: &Location{
+	Loc: &Location{
 		Cont: proto.String("EU"),
 	},
 }
@@ -93,9 +93,21 @@ var ConfITPNotEU = &Conf{
 	Due: &Date{
 		Y: proto.String("2026"),
 	},
-	L: &Location{
+	Loc: &Location{
 		Cont: proto.String("AF"),
 	},
+}
+
+var ConfIsComputerScience = G{"main": InPath("Category", Value(Eq(StringVar(), StringConst("Computer Science"))))}
+
+var ConfComputerScience = &Conf{
+	N:        proto.String("ICFP"),
+	Category: proto.String("Computer Science"),
+}
+
+var ConfNotComputerScience = &Conf{
+	N:        proto.String("ICFP"),
+	Category: proto.String("Functional Programming"),
 }
 
 func init() {
@@ -105,4 +117,6 @@ func init() {
 	ValidateProtoEtc("ConfIsIn2026OrLate2025ConfITPEarly2025", ConfIsIn2026OrLate2025, ConfITPEarly2025, false)
 	ValidateProtoEtc("ConfIsIn2026OrLate2025AndEUConfITPEU", ConfIsIn2026OrLate2025AndEU, ConfITPEU, true)
 	ValidateProtoEtc("ConfIsIn2026OrLate2025AndEUConfITPNotEU", ConfIsIn2026OrLate2025AndEU, ConfITPNotEU, false)
+	ValidateProtoEtc("ConfIsComputerScienceConfComputerScience", ConfIsComputerScience, ConfComputerScience, true)
+	ValidateProtoEtc("ConfIsComputerScienceConfNotComputerScience", ConfIsComputerScience, ConfNotComputerScience, false)
 }

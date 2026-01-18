@@ -44,3 +44,11 @@ func (this *PocketRoses) Description() *descriptor.FileDescriptorSet {
 func (this *Conf) Description() *descriptor.FileDescriptorSet {
 	return proto.NewFileDescriptorSet(File_conf_proto)
 }
+
+func (this *Date) Description() *descriptor.FileDescriptorSet {
+	return proto.NewFileDescriptorSet(File_conf_proto)
+}
+
+func (this *Location) Description() *descriptor.FileDescriptorSet {
+	return proto.NewFileDescriptorSet(File_conf_proto)
+}

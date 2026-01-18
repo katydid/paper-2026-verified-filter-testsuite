@@ -202,3 +202,7 @@ func RandomPuddingMilkshake(r *rand.Rand) ProtoMessage {
 func RandomConf(r *rand.Rand) ProtoMessage {
 	return random(r, &Conf{}).(ProtoMessage)
 }
+
+func RandomLocation(r *rand.Rand) ProtoMessage {
+	return random(r, &Location{}).(ProtoMessage)
+}
