@@ -10,4 +10,5 @@ regenerate:
 	(protoc --go_out=. --go_opt=paths=source_relative topsyturvy.proto)
 	(protoc --go_out=. --go_opt=paths=source_relative knot.proto)
 	(protoc --go_out=. --go_opt=paths=source_relative banana.proto)
+	(protoc --go_out=. --go_opt=paths=source_relative conf.proto)
 	find . -name "*.pb.go" | xargs gofmt -l -s -w

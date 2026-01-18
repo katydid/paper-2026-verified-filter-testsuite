@@ -40,3 +40,7 @@ func (this *TypewriterPrison) Description() *descriptor.FileDescriptorSet {
 func (this *PocketRoses) Description() *descriptor.FileDescriptorSet {
 	return proto.NewFileDescriptorSet(File_typewriterprison_proto)
 }
+
+func (this *Conf) Description() *descriptor.FileDescriptorSet {
+	return proto.NewFileDescriptorSet(File_conf_proto)
+}

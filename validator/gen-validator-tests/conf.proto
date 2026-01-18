@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package main;
+
+option go_package = "github.com/katydid/validator-testsuite/validator/gen-validator-tests/main";
+
+// ideas for field names gathered from https://conferenceindex.org
+
+message Conf {
+    optional string N = 1; // name
+    optional date Due = 2; // submission deadline
+    optional date Notify = 3; // notification
+    optional location L = 4; // location
+    repeated string T = 5; // tags
+}
+
+message date {
+    optional string Y = 1; // 4 digit year
+    optional string M = 2; // 2 digit month
+    optional string D = 3; // 2 digit day
+}
+
+message location {
+    optional string Cont = 1; // continent (AF: Africa, AN:	Antarctica, AS:	Asia, EU: Europe, NA: North America, SA: South America, OC: Oceania)
+    optional string Ctry = 2; // country ISO 2 letter
+    optional string City = 3; // city (full name)
+}
+
+

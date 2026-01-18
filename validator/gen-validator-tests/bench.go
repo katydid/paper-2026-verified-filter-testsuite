@@ -198,3 +198,7 @@ func RandomTypewriterPrison(r *rand.Rand) ProtoMessage {
 func RandomPuddingMilkshake(r *rand.Rand) ProtoMessage {
 	return random(r, &PuddingMilkshake{}).(ProtoMessage)
 }
+
+func RandomConf(r *rand.Rand) ProtoMessage {
+	return random(r, &Conf{}).(ProtoMessage)
+}
