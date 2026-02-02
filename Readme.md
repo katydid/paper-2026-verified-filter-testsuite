@@ -6,7 +6,7 @@ Instructions for running the testsuite can be found at [katydid/paper-2026-verif
 
 The test suite is a language agnostic test and benchmark suite, so that it can be used by multiple implementation languages.
 The test suite contains some Go code to help to generate tests for multiple serialization formats.
-The output is just a bunch of files and folders.
+The output is just a bunch of files and folders that can be read by any programming language.
 
 This repo was originally based [katydid/validator-testsuite](https://github.com/katydid/validator-testsuite/commit/565d7259b4a086251c11862a68b5619f731156bb), which explains how to add more tests and benchmarks.
 
@@ -14,7 +14,7 @@ This repo was originally based [katydid/validator-testsuite](https://github.com/
 
 The validator tests are located in the `./validator/tests` folder.
 Tests are grouped by codec: json, xml, etc. for the various serialization formats.
-Inside each codec folder is a list of testcase folders, each for a descriptive name.
+Inside each codec folder is a list of testcase folders, each with a name.
 Also found in the testcase folder is a filename starting with `valid` or `invalid` depending on whether the contents of the file is valid with respect to the provide grammar of invalid.
 
 ## Benchmarks
@@ -26,7 +26,7 @@ Instead this folder can be generated, by running `make regenerate-all` or `make 
 This will require `go` to be installed and this folder to checked out to
 `./src/github.com/katydid/paper-2026-verified-filter-testsuite`.
 
-Inside each codec folder is a list of benchcase folders, each for a descriptive name.
+Inside each codec folder is a list of benchcase folders, each with a name.
 Files in the codec folder are schemas that might be required by a benchcase.
 For example, marshaled protocol buffer file descriptor sets.
 
