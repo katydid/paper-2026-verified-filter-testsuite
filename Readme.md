@@ -2,6 +2,8 @@
 
 [![Build Status](https://github.com/katydid/paper-2026-verified-filter-testsuite/actions/workflows/build.yml/badge.svg)](https://github.com/katydid/paper-2026-verified-filter-testsuite/actions)
 
+Results of running the benchmarks from 2016 to 2026 can be found in the [benches](./benches/) folder.
+
 Instructions for running the testsuite can be found at [katydid/paper-2026-verified-filter-go](https://github.com/katydid/paper-2026-verified-filter-go).
 
 The test suite is a language agnostic test and benchmark suite, so that it can be used by multiple implementation languages.
