@@ -2,7 +2,7 @@ dep:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go
 
 build:
-	go build ./...
+	go build ./validator/...
 
 nuke:
 	(cd validator && make nuke)
