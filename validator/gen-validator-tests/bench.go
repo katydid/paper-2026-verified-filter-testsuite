@@ -57,10 +57,17 @@ func BenchValidateProtoJson(name string, grammar combinator.G, validProto, inval
 	BenchValidateJson(name, grammar, validProto, invalidProto)
 }
 
+func BenchValidateProtoJsonReflect(name string, grammar combinator.G, validProto, invalidProto RandProto) {
+	BenchValidateProto(name, grammar, validProto, invalidProto)
+	BenchValidateJson(name, grammar, validProto, invalidProto)
+	BenchValidateReflect(name, grammar, validProto, invalidProto)
+}
+
 func BenchValidateProtoEtc(name string, grammar combinator.G, validProto, invalidProto RandProto) {
 	BenchValidateProto(name, grammar, validProto, invalidProto)
 	BenchValidateJson(name, grammar, validProto, invalidProto)
 	BenchValidateXML(name, grammar, validProto, invalidProto)
+	BenchValidateReflect(name, grammar, validProto, invalidProto)
 }
 
 func BenchValidateProto(name string, grammar combinator.G, validProto, invalidProto RandProto) {
@@ -175,6 +182,41 @@ func BenchValidateXML(name string, grammar combinator.G, validProto, invalidProt
 		},
 	})
 	checkDuplicateBenches(name, "xml")
+}
+
+func BenchValidateReflect(name string, grammar combinator.G, validProto, invalidProto RandProto) {
+	g := grammar.Grammar()
+	validBytes := func(r *rand.Rand) []byte {
+		pb := validProto(r)
+		return mustBytes(json.Marshal(pb))
+	}
+	invalidBytes := func(r *rand.Rand) []byte {
+		pb := invalidProto(r)
+		return mustBytes(json.Marshal(pb))
+	}
+
+	m, err := validator.Prepare(g)
+	if err != nil {
+		panic(err)
+	}
+
+	BenchValidators = append(BenchValidators, BenchValidator{
+		Name:         name,
+		CodecName:    "goreflect",
+		Grammar:      g,
+		ValidBytes:   validBytes,
+		InvalidBytes: invalidBytes,
+		Extension:    "goreflect",
+		Validate: func(buf []byte) bool {
+			p := jsonparser.NewParser()
+			if err := p.Init(buf); err != nil {
+				panic(err)
+			}
+			v, err := validator.Validate(m, p)
+			return v && err == nil
+		},
+	})
+	checkDuplicateBenches(name, "goreflect")
 }
 
 type RandBytes func(r *rand.Rand) []byte

@@ -52,8 +52,8 @@ var ContextPerson = G{"main": InPath("Addresses", InAny(InOrder(
 )))}
 
 func init() {
-	ValidateProtoEtc("ContextDavid", ContextPerson, DavidPerson, false)
-	ValidateProtoEtc("ContextRobert", ContextPerson, RobertPerson, true)
+	ValidateJsonProto("ContextDavid", ContextPerson, DavidPerson, false)
+	ValidateJsonProto("ContextRobert", ContextPerson, RobertPerson, true)
 }
 
 var AndAnyName = G{"main": AllOf(
@@ -380,7 +380,7 @@ var PositiveNumber = G{
 }
 
 func init() {
-	ValidateProtoEtc("DontErrorGivenWrongType", PositiveNumber, NegativePerson, false)
+	ValidateJsonProto("DontErrorGivenWrongType", PositiveNumber, NegativePerson, false)
 }
 
 var CorrectTypePerson = G{"main": InOrder(
@@ -394,8 +394,8 @@ var WrongTypePerson = G{"main": InOrder(
 )}
 
 func init() {
-	ValidateProtoEtc("CorrectTypeRobert", CorrectTypePerson, RobertPerson, true)
-	ValidateProtoEtc("WrongTypeRobert", WrongTypePerson, RobertPerson, false)
+	ValidateJsonProto("CorrectTypeRobert", CorrectTypePerson, RobertPerson, true)
+	ValidateJsonProto("WrongTypeRobert", WrongTypePerson, RobertPerson, false)
 }
 
 var InSetPerson = G{"main": InPath("Name", Value(Contains(StringVar(),
@@ -414,11 +414,11 @@ var OptionalName = G{"main": InOrder(
 )}
 
 func init() {
-	ValidateProtoEtc("OptionalNameShakerPerson", OptionalName, ShakerPerson, true)
-	ValidateProtoEtc("OptionalNameNonamePerson", OptionalName, NonamePerson, true)
-	ValidateProtoEtc("OptionalNameSmithPerson", OptionalName, SmithPerson, true)
-	ValidateProtoEtc("OptionalNameRoutinePerson", OptionalName, RoutinePerson, false)
-	ValidateProtoEtc("OptionalNameJohnPerson", OptionalName, JohnPerson, false)
+	ValidateJsonProto("OptionalNameShakerPerson", OptionalName, ShakerPerson, true)
+	ValidateJsonProto("OptionalNameNonamePerson", OptionalName, NonamePerson, true)
+	ValidateJsonProto("OptionalNameSmithPerson", OptionalName, SmithPerson, true)
+	ValidateJsonProto("OptionalNameRoutinePerson", OptionalName, RoutinePerson, false)
+	ValidateJsonProto("OptionalNameJohnPerson", OptionalName, JohnPerson, false)
 }
 
 var OptionalAddress = G{"main": InPath("Addresses",
@@ -427,7 +427,7 @@ var OptionalAddress = G{"main": InPath("Addresses",
 )}
 
 func init() {
-	ValidateProtoEtc("OptionalAddressRobertPerson", OptionalAddress, RobertPerson, true)
-	ValidateProtoEtc("OptionalAddressDavidPerson", OptionalAddress, DavidPerson, true)
-	ValidateProtoEtc("OptionalAddressMoverPerson", OptionalAddress, MoverPerson, false)
+	ValidateJsonProto("OptionalAddressRobertPerson", OptionalAddress, RobertPerson, true)
+	ValidateJsonProto("OptionalAddressDavidPerson", OptionalAddress, DavidPerson, true)
+	ValidateJsonProto("OptionalAddressMoverPerson", OptionalAddress, MoverPerson, false)
 }

@@ -75,7 +75,7 @@ var MagazineFrameAFinanceJudo = G{
 }
 
 func init() {
-	ValidateProtoEtc("Ab21MagazineFrameA", MagazineFrameAFinanceJudo, Ab21FinanceJudo, true)
+	ValidateJsonProto("Ab21MagazineFrameA", MagazineFrameAFinanceJudo, Ab21FinanceJudo, true)
 }
 
 var MagazineFrameSingleAFinanceJudo = G{
@@ -90,7 +90,7 @@ var MagazineFrameSingleAFinanceJudo = G{
 }
 
 func init() {
-	ValidateProtoEtc("Ab21MagazineFrameSingleA", MagazineFrameSingleAFinanceJudo, Ab21FinanceJudo, false)
+	ValidateJsonProto("Ab21MagazineFrameSingleA", MagazineFrameSingleAFinanceJudo, Ab21FinanceJudo, false)
 }
 
 var InAnyExceptNotAFieldNameFinanceJudo = G{
@@ -108,7 +108,7 @@ var InAnyExceptNotAFieldNameFinanceJudo = G{
 }
 
 func init() {
-	ValidateProtoEtc("Ab21NotAFieldName", InAnyExceptNotAFieldNameFinanceJudo, Ab21FinanceJudo, true)
+	ValidateJsonProto("Ab21NotAFieldName", InAnyExceptNotAFieldNameFinanceJudo, Ab21FinanceJudo, true)
 }
 
 var InAnyExceptSaladWorryFinanceJudo = G{
@@ -122,7 +122,7 @@ var InAnyExceptSaladWorryFinanceJudo = G{
 }
 
 func init() {
-	ValidateProtoEtc("Ab21InAnyExceptSaladWorry", InAnyExceptSaladWorryFinanceJudo, Ab21FinanceJudo, false)
+	ValidateJsonProto("Ab21InAnyExceptSaladWorry", InAnyExceptSaladWorryFinanceJudo, Ab21FinanceJudo, false)
 }
 
 func init() {

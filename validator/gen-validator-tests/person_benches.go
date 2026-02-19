@@ -126,12 +126,12 @@ func RandomValidOrNameTelephonePerson(r *rand.Rand) ProtoMessage {
 
 func init() {
 	BenchValidateProtoJson("ContextPerson", ContextPerson, RandomValidContextPerson, RandomPerson)
-	BenchValidateProtoJson("ListIndexAddress", ListIndexAddressPerson, RandomValidListIndexAddressPerson, RandomPerson)
-	BenchValidateProtoJson("NilName", NilNamePerson, RandomValidNilNamePerson, RandomPerson)
-	BenchValidateProtoJson("LenName", LenNamePerson, RandomValidLenNamePerson, RandomPerson)
-	BenchValidateProtoJson("EmptyOrNil", EmptyOrNilPerson, RandomValidEmptyOrNilPerson, RandomInvalidEmptyOrNilPerson)
-	BenchValidateProtoJson("IncorrectNotName", NaiveNotNamePerson, RandomValidNaiveNotNamePerson, RandomInvalidNaiveNotNamePerson)
-	BenchValidateProtoJson("CorrectNotName", ProperNotNamePerson, RandomPerson, RandomInvalidProperNotNamePerson)
-	BenchValidateProtoJson("AndNameTelephone", AndNameTelephonePerson, RandomValidAndNameTelephonePerson, RandomPerson)
-	BenchValidateProtoJson("OrNameTelephone", OrNameTelephonePerson, RandomValidOrNameTelephonePerson, RandomPerson)
+	BenchValidateProtoJsonReflect("ListIndexAddress", ListIndexAddressPerson, RandomValidListIndexAddressPerson, RandomPerson)
+	BenchValidateProtoJsonReflect("NilName", NilNamePerson, RandomValidNilNamePerson, RandomPerson)
+	BenchValidateProtoJsonReflect("LenName", LenNamePerson, RandomValidLenNamePerson, RandomPerson)
+	BenchValidateProtoJsonReflect("EmptyOrNil", EmptyOrNilPerson, RandomValidEmptyOrNilPerson, RandomInvalidEmptyOrNilPerson)
+	BenchValidateProtoJsonReflect("IncorrectNotName", NaiveNotNamePerson, RandomValidNaiveNotNamePerson, RandomInvalidNaiveNotNamePerson)
+	BenchValidateProtoJsonReflect("CorrectNotName", ProperNotNamePerson, RandomPerson, RandomInvalidProperNotNamePerson)
+	BenchValidateProtoJsonReflect("AndNameTelephone", AndNameTelephonePerson, RandomValidAndNameTelephonePerson, RandomPerson)
+	BenchValidateProtoJsonReflect("OrNameTelephone", OrNameTelephonePerson, RandomValidOrNameTelephonePerson, RandomPerson)
 }

@@ -57,6 +57,12 @@ func ValidateProtoEtc(name string, grammar combinator.G, m ProtoMessage, expecte
 	ValidateProto(name, grammar, m, expected)
 }
 
+// ValidateJsonProto only handles Json and Proto, since Reflect's fields are reordered when unmarshaled from JSON.
+func ValidateJsonProto(name string, grammar combinator.G, m ProtoMessage, expected bool) {
+	ValidateJson(name, grammar, m, expected)
+	ValidateProto(name, grammar, m, expected)
+}
+
 func ValidateProto(name string, g combinator.G, m ProtoMessage, expected bool) {
 	schemaName := registerProto(m)
 	checkDuplicates(name, "pb")

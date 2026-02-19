@@ -103,7 +103,7 @@ func RandomConfComputerScience(r *rand.Rand) ProtoMessage {
 }
 
 func init() {
-	BenchValidateProtoJson("ConfIs2026", ConfIsIn2026, RandomConf2026, RandomConfNot2026)
-	BenchValidateProtoJson("ConfIsIn2026OrLate2025AndEU", ConfIsIn2026OrLate2025AndEU, RandomConfIsIn2026OrLate2025AndEU, RandomValidConf)
-	BenchValidateProtoJson("ConfIsComputerScience", ConfIsComputerScience, RandomConfComputerScience, RandomValidConf)
+	BenchValidateProtoJsonReflect("ConfIs2026", ConfIsIn2026, RandomConf2026, RandomConfNot2026)
+	BenchValidateProtoJsonReflect("ConfIsIn2026OrLate2025AndEU", ConfIsIn2026OrLate2025AndEU, RandomConfIsIn2026OrLate2025AndEU, RandomValidConf)
+	BenchValidateProtoJsonReflect("ConfIsComputerScience", ConfIsComputerScience, RandomConfComputerScience, RandomValidConf)
 }
